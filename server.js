@@ -17,11 +17,8 @@ const rollbar = new Rollbar({
 	captureUnhandledRejections: true,
 });
 
-try {
-	app.get('/pets', getPets);
-} catch {
-	rollbar.critical(error);
-}
+app.get('/pets', getPets);
+// rollbar.critical(error);
 
 app.listen(PORT, () => {
 	console.log(`listening on port ${PORT}`);
