@@ -6,5 +6,8 @@ let response = axios.get('http://localhost:4000', {
 	data: {},
 });
 
-response.then((res) => (element.textContent = res.data));
+response.then((res) => {
+	console.log(res.data.name);
+	element.textContent = res.data.name;
+});
 document.body.appendChild(element);
