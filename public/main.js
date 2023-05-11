@@ -1,10 +1,5 @@
 let element = document.createElement('p');
-let response = axios.get('http://localhost:4000/pets', {
-	headers: {
-		'Content-Type': 'text/html',
-	},
-	data: {},
-});
+let response = axios.get('http://localhost:4000/pets');
 
 response.then((res) => {
 	console.log(res);
