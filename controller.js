@@ -1,7 +1,7 @@
 module.exports = {
 	getPets: (req, res) => {
 		res;
-		res.status(200).send({
+		res.setHeader('Content-Type', 'application/json').status(200).send({
 			name: 'Draven',
 		});
 	},
