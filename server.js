@@ -9,6 +9,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(`${__dirname}/public`));
 
 const rollbar = new Rollbar({
 	accessToken: ROLLBAR_ACCESS_TOKEN,
@@ -17,7 +18,7 @@ const rollbar = new Rollbar({
 });
 
 try {
-	app.get('/', getPets);
+	app.get('/pets', getPets);
 } catch {
 	rollbar.critical(error);
 }
