@@ -1,5 +1,5 @@
 let element = document.createElement('p');
-let request = axios.get('http://18.219.145.88/pets');
+let request = axios.get('http://172.31.36.217/pets');
 
 request.then((res) => {
 	console.log(res);
