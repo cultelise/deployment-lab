@@ -1,7 +1,7 @@
 let element = document.createElement('p');
-let response = axios.get('http://localhost:4000/pets');
+let request = axios.get('http://localhost:4000/pets');
 
-response.then((res) => {
+request.then((res) => {
 	console.log(res);
 	element.textContent = res.data;
 });
