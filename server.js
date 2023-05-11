@@ -16,12 +16,10 @@ const rollbar = new Rollbar({
 	captureUnhandledRejections: true,
 });
 
-app.get('/', getPets);
-
 try {
-	app.get('/', nonFunction);
+	app.get('/', getPets);
 } catch {
-	rollbar.critical('error thrown');
+	rollbar.critical(error);
 }
 
 app.listen(PORT, () => {
